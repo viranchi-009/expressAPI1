@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 const cors = require('cors'); // <-- ADD THIS LINE
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => console.log(`Running on port ${PORT}`));
 
 app.use(cors()); // ✅ enable CORS for all origins
 app.use(express.json());
